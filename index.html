@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="MyHappyApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HappyApp</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src='app.js'></script>
+    <script src='HappyController.js'></script>
+  </head>
+    <h1>HappyApp</h1>
+    <h3>Genral average happiness over time..</h3>
+
+
+<body ng-controller="HappiesController">
+<svg height="150" width="400">
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="200" cy="70" rx="85" ry="55" fill="url(#grad3)" />
+  <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="76">
+   <h4>{{all}}</h4>
+</text>
+</svg>
+
+
+<hr>
+<h4>You should chose one of {{allSigns.length}} options:</h4>
+<form name="myForm" ng-submit="addMood()">
+  <label>
+    <input type="radio" ng-model="feeling" value="happy">Happy
+  </label>
+  <label>
+    <input type="radio" ng-model="feeling" value="sad">Sad
+  </label>
+  <label>
+    <input type="radio" ng-model="feeling" value="neutral">Neutral
+  </label><br/><br/>
+  <input type="submit" value="Save My Happiness!">
+ </form>
+
+
+<h4>You choice is:{{feeling}}</h4>
+
+
+
+</body>
+</html>
